@@ -1,0 +1,15 @@
+<script type="text/javascript" src="jquery.elevatezoom.js"></script>
+<script type="text/javascript" src="jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var $imgContainer = $('.product-main-slider'),
+                    $gallery = $('#gallery-main-slider'),
+                    selectorElement = '.slick-slide.slick-active > img.zoom-image',
+                    selectorGalleryElements = '.slick-slide'
+            ;
+            magnifier($imgContainer, selectorElement, $gallery, selectorGalleryElements);
+            $imgContainer.on('afterChange', function (slick, currentSlide) {
+                magnifier($(slick.target), selectorElement, $gallery, selectorGalleryElements);
+            });
+        });
+    </script>
